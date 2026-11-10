@@ -51,7 +51,7 @@ jobs:
             repo=$(python3 -I -c "import json,sys; print(json.load(open(sys.argv[1]))['repo'])" "$f")
             rm -rf /tmp/proj && mkdir /tmp/proj && cd /tmp/proj
             /tmp/clay/build/clay bricks init
-            /tmp/clay/build/clay bricks add "$repo" "$name"
+            /tmp/clay/build/clay bricks add "$repo" "$name" --yes   # a native brick builds here, knowingly
             printf 'import("%s")\n"%s imports" println\n' "$name" "$name" > try.clay
             /tmp/clay/build/clay try.clay
             if ls bricks/$name/tests/test_*.clay >/dev/null 2>&1; then
