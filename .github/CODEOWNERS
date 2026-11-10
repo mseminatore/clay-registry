@@ -1,0 +1,7 @@
+# A change to a listed brick's entry needs its maintainer's approval, so an entry can't be
+# repointed by just anyone. Add a line when you list a brick (the registry maintainers can
+# always merge too).
+*                      @mseminatore
+bricks/ann.json        @mseminatore
+bricks/stdlib.json     @mseminatore
+bricks/web.json        @mseminatore

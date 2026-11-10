@@ -1,0 +1,13 @@
+{
+  "name": "ann",
+  "repo": "github.com/mseminatore/clay-ann",
+  "description": "Neural networks: dense and convolutional layers, training, export and int8 quantization, a native brick over libann",
+  "tags": [
+    "machine-learning",
+    "neural-networks",
+    "native"
+  ],
+  "license": "MIT",
+  "native": true,
+  "version": "0.2.0"
+}

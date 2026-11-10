@@ -1,0 +1,72 @@
+name: Check
+
+on:
+  pull_request:
+    paths: ["bricks/**"]
+  push:
+    branches: [main]
+
+permissions:
+  contents: write          # the push job commits index.json and the README table
+
+jobs:
+  entries:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+
+      - name: Changed entries
+        id: changed
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            files=$(git diff --name-only --diff-filter=AM origin/${{ github.base_ref }}... -- 'bricks/*.json' | tr '\n' ' ')
+          else
+            files=$(ls bricks/*.json | tr '\n' ' ')
+          fi
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+
+      - name: Validate every entry
+        run: python3 -I scripts/check.py
+
+      - name: Clone the changed bricks and read their brick.json
+        if: steps.changed.outputs.files != ''
+        run: python3 -I scripts/check.py --fetch ${{ steps.changed.outputs.files }}
+
+      - name: Build Clay
+        if: steps.changed.outputs.files != ''
+        run: |
+          git clone --depth 1 --recurse-submodules --quiet https://github.com/mseminatore/clay /tmp/clay
+          cmake -S /tmp/clay -B /tmp/clay/build -DCMAKE_BUILD_TYPE=Release -DCMAKE_DISABLE_FIND_PACKAGE_SDL2=ON
+          cmake --build /tmp/clay/build --target clay -j4
+
+      # The brick is installed and imported from a project of its own, the way a user would.
+      # A native brick is built here (C code from the listed repository runs in this job only).
+      - name: Install and import the changed bricks
+        if: steps.changed.outputs.files != ''
+        run: |
+          set -e
+          for f in ${{ steps.changed.outputs.files }}; do
+            name=$(python3 -I -c "import json,sys; print(json.load(open(sys.argv[1]))['name'])" "$f")
+            repo=$(python3 -I -c "import json,sys; print(json.load(open(sys.argv[1]))['repo'])" "$f")
+            rm -rf /tmp/proj && mkdir /tmp/proj && cd /tmp/proj
+            /tmp/clay/build/clay bricks init
+            /tmp/clay/build/clay bricks add "$repo" "$name"
+            printf 'import("%s")\n"%s imports" println\n' "$name" "$name" > try.clay
+            /tmp/clay/build/clay try.clay
+            if ls bricks/$name/tests/test_*.clay >/dev/null 2>&1; then
+              for t in bricks/$name/tests/test_*.clay; do /tmp/clay/build/clay "$t"; done
+            fi
+            cd -
+          done
+
+      - name: Rebuild index.json and the README table
+        if: github.event_name == 'push'
+        run: |
+          python3 -I scripts/check.py --fetch bricks/*.json
+          python3 -I scripts/check.py --index
+          git config user.name "clay-registry bot"
+          git config user.email "noreply@users.noreply.github.com"
+          git add index.json README.md bricks
+          git diff --cached --quiet || git commit -m "regenerate index"
+          git push
