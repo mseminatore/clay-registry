@@ -60,13 +60,19 @@ jobs:
             cd -
           done
 
-      - name: Rebuild index.json and the README table
+      # The generated files live on the unprotected `index` branch (main only takes
+      # pull requests): index.json is what `clay bricks search` fetches, BRICKS.md the
+      # same list for people. Rebuilt from main on every push.
+      - name: Publish index.json and BRICKS.md to the index branch
         if: github.event_name == 'push'
         run: |
           python3 -I scripts/check.py --fetch bricks/*.json
           python3 -I scripts/check.py --index
+          mkdir /tmp/index && cp index.json BRICKS.md /tmp/index/
+          cd /tmp/index
+          git init --quiet -b index
           git config user.name "clay-registry bot"
           git config user.email "noreply@users.noreply.github.com"
-          git add index.json README.md bricks
-          git diff --cached --quiet || git commit -m "regenerate index"
-          git push
+          git add index.json BRICKS.md
+          git commit --quiet -m "index from main ${{ github.sha }}"
+          git push --force --quiet "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" index

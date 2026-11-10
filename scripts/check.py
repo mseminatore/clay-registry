@@ -3,7 +3,7 @@
 
   check.py [--entries bricks/x.json ...]   validate entries (all, or the given ones)
   check.py --fetch bricks/x.json ...       also clone each repo and read its brick.json
-  check.py --index                         write index.json and the README table from bricks/*.json
+  check.py --index                         write index.json and BRICKS.md from bricks/*.json
 
 Entries are data from strangers: every field is checked for shape and length, and
 the clone goes to a fresh directory that nothing is run from.
@@ -131,13 +131,10 @@ def build_index():
         json.dump({"version": 1, "bricks": entries}, f, indent=2)
         f.write("\n")
     rows = "\n".join(f"| `{e['name']}` | {e['description']} | {'yes' if e.get('native') else ''} | https://{e['repo']} |" for e in entries)
-    table = f"<!-- bricks:start -->\n| Brick | Description | Native | Repository |\n|-------|-------------|--------|------------|\n{rows}\n<!-- bricks:end -->"
-    rp = os.path.join(ROOT, "README.md")
-    with open(rp, encoding="utf-8") as f:
-        readme = f.read()
-    readme = re.sub(r"<!-- bricks:start -->.*<!-- bricks:end -->", lambda _: table, readme, flags=re.S)
-    with open(rp, "w", encoding="utf-8") as f:
-        f.write(readme)
+    with open(os.path.join(ROOT, "BRICKS.md"), "w", encoding="utf-8") as f:
+        f.write("# Clay bricks\n\nGenerated from the entries on `main` by CI; to list a brick, see the README there. "
+                "Listing is not vetting: read a brick before you depend on it.\n\n"
+                "| Brick | Description | Native | Repository |\n|-------|-------------|--------|------------|\n" + rows + "\n")
     print(f"index.json: {len(entries)} bricks")
 
 

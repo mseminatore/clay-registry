@@ -12,15 +12,10 @@ pin it (`clay bricks add <url>@<tag>`; `brick.lock` records the commit).
 
 ## Bricks
 
-<!-- bricks:start -->
-| Brick | Description | Native | Repository |
-|-------|-------------|--------|------------|
-| `ann` | Neural networks: dense and convolutional layers, training, export and int8 quantization, a native brick over libann | yes | https://github.com/mseminatore/clay-ann |
-| `stdlib` | Clay's standard library: collections, json, csv, cli, fs, log and more, imported as stdlib/<name> |  | https://github.com/mseminatore/clay-stdlib |
-| `web` | HTTP server, URL router and ORM, imported as web/<name> |  | https://github.com/mseminatore/clay-web |
-<!-- bricks:end -->
-
-(This table is generated from `bricks/*.json` by CI. Edit the JSON, not the table.)
+The list is [BRICKS.md on the `index` branch](https://github.com/mseminatore/clay-registry/blob/index/BRICKS.md),
+rebuilt by CI from `bricks/*.json` whenever `main` changes, next to the `index.json` that
+`clay bricks search` reads. (`main` only takes pull requests, so the generated files live on a
+branch of their own.)
 
 ## Listing a brick
 
@@ -60,7 +55,7 @@ questions after. Removing an entry does not touch anyone's installed copy.
 
 ## How Clay uses this
 
-`clay bricks search <words>` and `clay bricks info <name>` read `index.json` from this repository
+`clay bricks search <words>` and `clay bricks info <name>` read `index.json` from this repository's `index` branch
 (set `CLAY_REGISTRY` to use a mirror or your own list). They only print what they find: nothing is
 downloaded, built or run until you `clay bricks add` the URL yourself. The index is treated as
 untrusted data: only `https://` links on known hosts are shown, and text is clipped.
