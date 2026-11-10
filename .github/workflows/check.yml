@@ -38,7 +38,7 @@ jobs:
         run: |
           git clone --depth 1 --recurse-submodules --quiet https://github.com/mseminatore/clay /tmp/clay
           cmake -S /tmp/clay -B /tmp/clay/build -DCMAKE_BUILD_TYPE=Release -DCMAKE_DISABLE_FIND_PACKAGE_SDL2=ON
-          cmake --build /tmp/clay/build --target clay -j4
+          cmake --build /tmp/clay/build --target clay_compiler -j4
 
       # The brick is installed and imported from a project of its own, the way a user would.
       # A native brick is built here (C code from the listed repository runs in this job only).
