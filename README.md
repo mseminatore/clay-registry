@@ -13,8 +13,9 @@ pin it (`clay bricks add <url>@<tag>`; `brick.lock` records the commit).
 ## Bricks
 
 The list is [BRICKS.md on the `index` branch](https://github.com/mseminatore/clay-registry/blob/index/BRICKS.md),
-rebuilt by CI from `bricks/*.json` whenever `main` changes, next to the `index.json` that
-`clay bricks search` reads. (`main` only takes pull requests, so the generated files live on a
+rebuilt by CI from `bricks/*.json` whenever `main` changes and once a day, next to the `index.json`
+that `clay bricks search` reads. Each rebuild reads every brick's own `brick.json`, so a new version
+of a brick shows up within a day with no change here. (`main` only takes pull requests, so the generated files live on a
 branch of their own.)
 
 ## Listing a brick
@@ -35,8 +36,8 @@ branch of their own.)
    ```
 
    `name`, `repo`, `description` and `license` are required. `tags` (up to 8, lower-case words
-   with hyphens) and `homepage` (a URL) are optional. Don't set `native`: CI reads it from the
-   brick's own `brick.json`.
+   with hyphens) and `homepage` (a URL) are optional. Don't set `native` or `version`: CI reads them
+   from the brick's own `brick.json`.
 3. Open a pull request. CI checks the entry (`scripts/check.py`), then clones the repository,
    installs the brick with a fresh Clay build and imports it. If `tests/` holds `test_*.clay`
    files, it runs them too. A green check and one maintainer's approval merge the listing.

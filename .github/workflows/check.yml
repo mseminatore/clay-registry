@@ -5,6 +5,9 @@ on:
     paths: ["bricks/**"]
   push:
     branches: [main]
+  schedule:
+    - cron: "17 5 * * *"   # daily: pick up new brick versions and re-test every brick
+  workflow_dispatch:       # "Run workflow" on the Actions page, to refresh the index now
 
 permissions:
   contents: write          # the push job commits index.json and the README table
@@ -62,9 +65,10 @@ jobs:
 
       # The generated files live on the unprotected `index` branch (main only takes
       # pull requests): index.json is what `clay bricks search` fetches, BRICKS.md the
-      # same list for people. Rebuilt from main on every push.
+      # same list for people. Rebuilt from main on every push, daily and on request, so a
+      # brick's new version shows up without a change here.
       - name: Publish index.json and BRICKS.md to the index branch
-        if: github.event_name == 'push'
+        if: github.event_name != 'pull_request'
         run: |
           python3 -I scripts/check.py --fetch bricks/*.json
           python3 -I scripts/check.py --index
