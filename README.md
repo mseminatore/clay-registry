@@ -12,7 +12,7 @@ pin it (`clay bricks add <url>@<tag>`; `brick.lock` records the commit).
 
 ## Bricks
 
-The list is [BRICKS.md on the `index` branch](https://github.com/mseminatore/clay-registry/blob/index/BRICKS.md),
+The list is [BRICKS.md](https://github.com/mseminatore/clay-registry/blob/index/BRICKS.md),  on the `index` branch,
 rebuilt by CI from `bricks/*.json` whenever `main` changes and once a day, next to the `index.json`
 that `clay bricks search` reads. Each rebuild reads every brick's own `brick.json`, so a new version
 of a brick shows up within a day with no change here. (`main` only takes pull requests, so the generated files live on a
