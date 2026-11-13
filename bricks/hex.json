@@ -1,0 +1,13 @@
+{
+  "name": "hex",
+  "repo": "github.com/mseminatore/clay-hex",
+  "description": "Hex encoding, decoding and hexdumps for byte strings",
+  "tags": [
+    "encoding",
+    "hex",
+    "binary"
+  ],
+  "license": "MIT",
+  "native": false,
+  "version": "0.1.1"
+}
