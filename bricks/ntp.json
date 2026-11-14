@@ -1,0 +1,11 @@
+{
+    "name": "ntp",
+    "repo": "github.com/mseminatore/clay-ntp",
+    "description": "Ask an NTP server for the time and how far your clock is off (measures, never sets, the clock)",
+    "tags": [
+        "ntp",
+        "time",
+        "network"
+    ],
+    "license": "MIT"
+}
