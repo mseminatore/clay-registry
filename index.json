@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "bricks": [
+    {
+      "name": "ann",
+      "repo": "github.com/mseminatore/clay-ann",
+      "description": "Neural networks: dense and convolutional layers, training, export and int8 quantization, a native brick over libann",
+      "tags": [
+        "machine-learning",
+        "neural-networks",
+        "native"
+      ],
+      "license": "MIT",
+      "native": true,
+      "version": "0.2.1"
+    },
+    {
+      "name": "hex",
+      "repo": "github.com/mseminatore/clay-hex",
+      "description": "Hex encoding, decoding and hexdumps for byte strings",
+      "tags": [
+        "encoding",
+        "hex",
+        "binary"
+      ],
+      "license": "MIT",
+      "native": false,
+      "version": "0.1.1"
+    },
+    {
+      "name": "ntp",
+      "repo": "github.com/mseminatore/clay-ntp",
+      "description": "Simple NTP (SNTP) client: ask a server for the time and your clock's offset",
+      "tags": [
+        "ntp",
+        "sntp",
+        "time",
+        "network"
+      ],
+      "license": "MIT",
+      "native": false,
+      "version": "0.1.1"
+    }
+  ]
+}
