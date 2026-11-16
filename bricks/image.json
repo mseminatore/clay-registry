@@ -1,0 +1,7 @@
+{
+  "name": "image",
+  "repo": "github.com/mseminatore/clay-image",
+  "description": "Load, save and convert images (PNG, JPEG, BMP, ...), with pixels as bytes or 0..1 floats: a native brick over stb_image",
+  "tags": ["image", "graphics", "machine-learning", "native"],
+  "license": "MIT"
+}
