@@ -1,0 +1,7 @@
+{
+  "name": "plot",
+  "repo": "github.com/mseminatore/clay-plot",
+  "description": "Charts and figures in the style of matplotlib's pyplot: line, scatter, bar, pie, histogram and image plots, subplots, log axes and live training curves, saved as PNG or SVG or drawn in the terminal",
+  "tags": ["plotting", "charts", "visualization", "matplotlib", "machine-learning", "svg", "png", "terminal"],
+  "license": "MIT"
+}
