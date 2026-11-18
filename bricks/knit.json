@@ -1,0 +1,7 @@
+{
+  "name": "knit",
+  "repo": "github.com/mseminatore/clay-knit",
+  "description": "Reports from Markdown with Clay code chunks, written as PDF like R Markdown's knitr: code, output, figures, tables, captions and cross-references",
+  "tags": ["reports", "markdown", "pdf", "literate-programming", "data-science"],
+  "license": "MIT"
+}
