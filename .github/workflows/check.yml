@@ -57,8 +57,10 @@ jobs:
             /tmp/clay/build/clay bricks add "$repo" "$name" --yes   # a native brick builds here, knowingly
             printf 'import("%s")\n"%s imports" println\n' "$name" "$name" > try.clay
             /tmp/clay/build/clay try.clay
+            # Tests run from the brick's own directory, as a brick's tests expect
+            # (relative paths such as tests/data/... resolve against it).
             if ls bricks/$name/tests/test_*.clay >/dev/null 2>&1; then
-              for t in bricks/$name/tests/test_*.clay; do /tmp/clay/build/clay "$t"; done
+              (cd bricks/$name && for t in tests/test_*.clay; do /tmp/clay/build/clay "$t"; done)
             fi
             cd -
           done
