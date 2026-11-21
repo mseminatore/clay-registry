@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "bricks": [
+    {
+      "name": "ann",
+      "repo": "github.com/mseminatore/clay-ann",
+      "description": "Neural networks: dense and convolutional layers, training, export and int8 quantization, a native brick over libann",
+      "tags": [
+        "machine-learning",
+        "neural-networks",
+        "native"
+      ],
+      "license": "MIT",
+      "native": true,
+      "version": "0.5.0"
+    },
+    {
+      "name": "hex",
+      "repo": "github.com/mseminatore/clay-hex",
+      "description": "Hex encoding, decoding and hexdumps for byte strings",
+      "tags": [
+        "encoding",
+        "hex",
+        "binary"
+      ],
+      "license": "MIT",
+      "native": false,
+      "version": "0.2.0"
+    },
+    {
+      "name": "image",
+      "repo": "github.com/mseminatore/clay-image",
+      "description": "Load, save and convert images (PNG, JPEG, BMP, ...), with pixels as bytes or 0..1 floats: a native brick over stb_image",
+      "tags": [
+        "image",
+        "graphics",
+        "machine-learning",
+        "native"
+      ],
+      "license": "MIT",
+      "native": true,
+      "version": "0.3.0"
+    },
+    {
+      "name": "knit",
+      "repo": "github.com/mseminatore/clay-knit",
+      "description": "Reports from Markdown with Clay code chunks, written as PDF like R Markdown's knitr: code, output, figures, tables, captions and cross-references",
+      "tags": [
+        "reports",
+        "markdown",
+        "pdf",
+        "literate-programming",
+        "data-science"
+      ],
+      "license": "MIT",
+      "native": false,
+      "version": "0.1.2"
+    },
+    {
+      "name": "ntp",
+      "repo": "github.com/mseminatore/clay-ntp",
+      "description": "Simple NTP (SNTP) client: ask a server for the time and your clock's offset",
+      "tags": [
+        "ntp",
+        "sntp",
+        "time",
+        "network"
+      ],
+      "license": "MIT",
+      "native": false,
+      "version": "0.2.1"
+    },
+    {
+      "name": "pdf",
+      "repo": "github.com/mseminatore/clay-pdf",
+      "description": "Write PDF files from Clay: pages, text, lines, rectangles, circles, polygons, Bezier paths, colors, transparency, dashes, PNG and JPEG",
+      "tags": [
+        "pdf",
+        "charts",
+        "visualization"
+      ],
+      "license": "MIT",
+      "native": false,
+      "version": "0.1.1"
+    },
+    {
+      "name": "plot",
+      "repo": "github.com/mseminatore/clay-plot",
+      "description": "Render charts and figures: line, bar, pie, box, violin, contour and image plots, twin axes, annotations and ML plots, as PNG or SVG or drawn in the terminal",
+      "tags": [
+        "plotting",
+        "charts",
+        "visualization",
+        "matplotlib",
+        "machine-learning",
+        "svg",
+        "png",
+        "terminal"
+      ],
+      "license": "MIT",
+      "native": false,
+      "version": "0.6.0"
+    }
+  ]
+}
