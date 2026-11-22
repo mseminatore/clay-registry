@@ -1,7 +1,7 @@
 {
   "name": "plot",
   "repo": "github.com/mseminatore/clay-plot",
-  "description": "Render charts and figures: line, bar, pie, box, violin, contour and image plots, twin axes, annotations and ML plots, as PNG or SVG or drawn in the terminal",
-  "tags": ["plotting", "charts", "visualization", "matplotlib", "machine-learning", "svg", "png", "terminal"],
+  "description": "Charts in the style of matplotlib's pyplot: line, bar, pie, scatter, box, violin, contour, image, quiver, streamplot and polar plots with math text, as PNG, SVG, PDF, interactive HTML or terminal text",
+  "tags": ["plotting", "charts", "visualization", "matplotlib", "machine-learning", "svg", "html", "terminal"],
   "license": "MIT"
 }

@@ -1,7 +1,7 @@
 {
   "name": "pdf",
   "repo": "github.com/mseminatore/clay-pdf",
-  "description": "Write PDF files from Clay: pages, text, lines, rectangles, circles, polygons, Bezier paths, colors, transparency, dashes, PNG and JPEG",
-  "tags": ["pdf", "charts", "visualization"],
+  "description": "Write PDF files: pages, flowing and rich text with super- and subscripts, shapes, Bezier paths, colors, transparency, PNG and JPEG images, links and bookmarks",
+  "tags": ["pdf", "documents", "reports", "graphics"],
   "license": "MIT"
 }
