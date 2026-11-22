@@ -1,0 +1,12 @@
+{
+  "name": "point",
+  "repo": "github.com/mseminatore/clay-point",
+  "description": "2D points: arithmetic, length, distance, dot and cross products",
+  "tags": [
+    "point",
+    "vector",
+    "distance",
+    "dot"
+  ],
+  "license": "MIT"
+}
