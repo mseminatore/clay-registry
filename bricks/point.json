@@ -8,7 +8,8 @@
     "geometry",
     "math",
     "linear-algebra",
-    "dot"
+    "graphics",
+    "games"
   ],
   "license": "MIT"
 }
