@@ -1,11 +1,13 @@
 {
   "name": "point",
   "repo": "github.com/mseminatore/clay-point",
-  "description": "2D points: arithmetic, length, distance, dot and cross products",
+  "description": "2D points and vectors: distance, lerp, length, normalize, dot, cross, rotate, project, reflect",
   "tags": [
     "point",
     "vector",
-    "distance",
+    "geometry",
+    "math",
+    "linear-algebra",
     "dot"
   ],
   "license": "MIT"
