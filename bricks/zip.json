@@ -1,0 +1,7 @@
+{
+  "name": "zip",
+  "repo": "github.com/mseminatore/clay-zip",
+  "description": "Read and write zip archives, in files or in memory, and compress Strings as zlib, raw deflate or gzip, with CRC-32 and Adler-32: a native brick over miniz",
+  "tags": ["zip", "zlib", "gzip", "deflate", "compression", "archive", "native"],
+  "license": "MIT"
+}
