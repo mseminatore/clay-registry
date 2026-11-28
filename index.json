@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "bricks": [
+    {
+      "name": "ann",
+      "repo": "github.com/mseminatore/clay-ann",
+      "description": "Neural networks: dense, convolutional and embedding layers, training, layer weights and activations, PCA, ONNX and C export, int8 quantization: a native brick over libann",
+      "tags": [
+        "machine-learning",
+        "neural-networks",
+        "native"
+      ],
+      "license": "MIT",
+      "native": true,
+      "version": "0.6.0"
+    },
+    {
+      "name": "hex",
+      "repo": "github.com/mseminatore/clay-hex",
+      "description": "Hex encoding, decoding and hexdumps for byte strings",
+      "tags": [
+        "encoding",
+        "hex",
+        "binary"
+      ],
+      "license": "MIT",
+      "native": false,
+      "version": "0.2.0"
+    },
+    {
+      "name": "image",
+      "repo": "github.com/mseminatore/clay-image",
+      "description": "Load, save and draw images: PNG, JPEG, BMP and more, pixels as bytes or 0..1 floats, an antialiased canvas with text, animated GIF and APNG: a native brick over stb_image",
+      "tags": [
+        "image",
+        "graphics",
+        "animation",
+        "machine-learning",
+        "native"
+      ],
+      "license": "MIT",
+      "native": true,
+      "version": "0.4.0"
+    },
+    {
+      "name": "knit",
+      "repo": "github.com/mseminatore/clay-knit",
+      "description": "Reports from Markdown with Clay code chunks, like R Markdown's knitr: a PDF or a web page with interactive figures, math, tables, captions, cross-references, links and bookmarks",
+      "tags": [
+        "reports",
+        "markdown",
+        "pdf",
+        "html",
+        "literate-programming",
+        "data-science",
+        "math"
+      ],
+      "license": "MIT",
+      "native": false,
+      "version": "0.4.4"
+    },
+    {
+      "name": "ntp",
+      "repo": "github.com/mseminatore/clay-ntp",
+      "description": "Simple NTP (SNTP) client: ask a server for the time and your clock's offset",
+      "tags": [
+        "ntp",
+        "sntp",
+        "time",
+        "network"
+      ],
+      "license": "MIT",
+      "native": false,
+      "version": "0.2.1"
+    },
+    {
+      "name": "pdf",
+      "repo": "github.com/mseminatore/clay-pdf",
+      "description": "Write PDF files: pages, flowing and rich text with super- and subscripts, shapes, Bezier paths, colors, transparency, PNG and JPEG images, links and bookmarks",
+      "tags": [
+        "pdf",
+        "documents",
+        "reports",
+        "graphics"
+      ],
+      "license": "MIT",
+      "native": false,
+      "version": "0.3.2"
+    },
+    {
+      "name": "plot",
+      "repo": "github.com/mseminatore/clay-plot",
+      "description": "Charts in the style of matplotlib's pyplot: line, bar, pie, scatter, box, violin, contour, image, quiver, streamplot and polar plots with math text, as PNG, SVG, PDF, interactive HTML or terminal text",
+      "tags": [
+        "plotting",
+        "charts",
+        "visualization",
+        "matplotlib",
+        "machine-learning",
+        "svg",
+        "html",
+        "terminal"
+      ],
+      "license": "MIT",
+      "native": false,
+      "version": "0.9.4"
+    },
+    {
+      "name": "point",
+      "repo": "github.com/mseminatore/clay-point",
+      "description": "2D points and vectors: distance, lerp, length, normalize, dot, cross, rotate, project, reflect",
+      "tags": [
+        "point",
+        "vector",
+        "geometry",
+        "math",
+        "linear-algebra",
+        "graphics",
+        "games"
+      ],
+      "license": "MIT",
+      "native": false,
+      "version": "0.3.1"
+    },
+    {
+      "name": "zip",
+      "repo": "github.com/mseminatore/clay-zip",
+      "description": "Read and write zip archives, in files or in memory, and compress Strings as zlib, raw deflate or gzip, with CRC-32 and Adler-32: a native brick over miniz",
+      "tags": [
+        "zip",
+        "zlib",
+        "gzip",
+        "deflate",
+        "compression",
+        "archive",
+        "native"
+      ],
+      "license": "MIT",
+      "native": true,
+      "version": "0.1.1"
+    }
+  ]
+}
